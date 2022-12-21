@@ -25,6 +25,14 @@ header {
   background-size: cover;
   padding: 2em;
   min-height: 100vh;
+  @media screen and (min-width: 871px) {
+    min-height: 60vh;
+    background-image: url("./images/desktop/image-hero.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 5em;
+  }
   .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -36,6 +44,9 @@ header {
     .hamburger {
       width: 30px;
       height: 20px;
+      @media screen and (min-width: 871px) {
+        display: none;
+      }
     }
   }
 }
@@ -45,20 +56,39 @@ header {
 
   h1 {
     border: 1px solid white;
-    font-size: clamp(3rem, 2.7vw, 4rem);
+    font-size: 3rem;
+    font-size: clamp(3rem, 2.647887323943662rem + 1.5023474178403755vw, 4rem);
     color: $white;
     text-transform: uppercase;
     font-weight: 300;
     font-family: "Josefin Sans", sans-serif;
     padding: 0.5em 0;
     width: fit-content;
+    @media screen and (min-width: 871px) {
+      width: min(40%, 45rem);
+      margin-bottom: 3em;
+    }
   }
 }
 
 nav {
   display: none;
+  @media screen and (min-width: 871px) {
+    display: block;
+    color: $white;
+  }
   ul {
     display: flex;
+    list-style: none;
+    li {
+      padding: 0 1em;
+      font-size: 1rem;
+      font-size: clamp(
+        1rem,
+        0.823943661971831rem + 0.7511737089201878vw,
+        1.5rem
+      );
+    }
   }
 }
 
@@ -77,7 +107,8 @@ main {
     }
 
     h2 {
-      font-size: clamp(2rem, 2vw, 3rem);
+      font-size: 2rem;
+      font-size: clamp(2rem, 1.647887323943662rem + 1.5023474178403755vw, 3rem);
       text-transform: uppercase;
       font-family: "Josefin Sans";
       text-align: center;
@@ -91,7 +122,8 @@ main {
 
 .divider {
   h3 {
-    font-size: clamp(1.9rem, 2vw, 3rem);
+    font-size: 1.9rem;
+    font-size: clamp(1.9rem, 1.512676056338028rem + 1.6525821596244135vw, 3rem);
     text-align: center;
     text-transform: uppercase;
     font-family: "Josefin Sans";
@@ -118,12 +150,17 @@ main {
     h4 {
       position: absolute;
       bottom: 5%;
-      left: 0;
+      left: 4%;
       right: 10%;
 
       width: min(40%, 90%);
       font-family: "Josefin Sans";
-      font-size: clamp(1.5rem, 1.8vw, 2rem);
+      font-size: 1.5rem;
+      font-size: clamp(
+        1.5rem,
+        1.323943661971831rem + 0.7511737089201878vw,
+        2rem
+      );
     }
     &:nth-of-type(1) {
       background-image: url("./images/mobile/image-deep-earth.jpg");
@@ -162,6 +199,7 @@ main {
     text-transform: uppercase;
     color: $black;
     font-family: "Alata";
+    margin-bottom: 2em;
   }
 }
 
@@ -174,6 +212,7 @@ main {
   justify-content: space-around;
   padding: 2em;
   place-items: center;
+  margin-top: 1em;
 
   img {
     &:first-of-type {
@@ -190,10 +229,35 @@ main {
       list-style: none;
       margin: 0;
       padding: 0;
+      li {
+        &:hover {
+          background-color: $white;
+          color: $black;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
 
 .container > * {
-  padding: 0 0.5em;
+  padding: 0 0.8em;
+}
+
+@media screen and (min-width: 871px) {
+  main {
+    padding: 5em;
+
+    .section__1 {
+      position: relative;
+      padding: 5em;
+
+      .container {
+        img {
+          position: absolute;
+          width: 50%;
+        }
+      }
+    }
+  }
 }
